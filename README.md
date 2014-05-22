@@ -1,6 +1,10 @@
 myusefulconfigs
 ===============
 
-Here I put a github repository for my config files on droplets, in order to easily clone them on my servers. 
+I created this github repository in order to clone easily to my droplets the config files for various services.
 
-# that's it
+#### Italiano
+
+Ho creato questa repository su github per clonarla facilmente nelle mie droplet di produzione. 
+
+ 

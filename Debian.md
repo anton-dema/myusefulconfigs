@@ -6,3 +6,6 @@ Se dopo l'upgrade odierno di debian php5-fpm i vostri siti web restituiscono err
     listen.group = www-data
 
 Poi un _service php5-fpm restart_ e tutto rifila liscio come l'olio :-)﻿
+
+E come fare a meno di no spezzarele le linee e non fare le nostre attansie e le paturnie del cazzo 
+

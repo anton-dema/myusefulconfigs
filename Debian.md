@@ -23,6 +23,5 @@ E non ho detto tutto
 
 ## Come si fa a dire?       
 
-```php
-Ora abbiamo la formattazoine in PHP e [markdonw](http://dema.tv). 
+Ora abbiamo la formattazoine in PHP e [markdown](http://dema.tv). 
 

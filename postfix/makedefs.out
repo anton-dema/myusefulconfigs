@@ -1,0 +1,55 @@
+# Do not edit -- this file documents how Postfix was built for your machine.
+SYSTYPE	= LINUX3
+AR	= ar
+ARFL	= rv
+RANLIB	= ranlib
+SYSLIBS	= \
+		-lsasl2 \
+		-lldap -llber \
+		-lssl -lcrypto \
+		-lmysqlclient -lz -lm \
+		-lpq \
+		-lsqlite3 -lpthread \
+		-lcdb \
+	 -lpcre -ldb -lnsl -lresolv
+CC	= gcc $(WARN) \
+		-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I/usr/include/sasl \
+		-DHAS_LDAP \
+		-DUSE_TLS \
+		-DHAS_MYSQL -I/usr/include/mysql \
+		-DHAS_PGSQL -I/usr/include/postgresql \
+		-DHAS_SQLITE \
+		-DHAS_CDB \
+		-DDEF_MANPAGE_DIR=\"/usr/share/man\" \
+		-DDEF_DAEMON_DIR=\"/usr/lib/postfix\" \
+		-DDEF_SAMPLE_DIR=\"/etc/postfix/sample\" \
+		-DDEF_README_DIR=\"/usr/share/doc/postfix\" \
+	 -DHAS_PCRE 
+OPT	= -march=armv6 -mfloat-abi=hard -mfpu=vfp -O2 -pipe -fstack-protector --param=ssp-buffer-size=4 -D_FORTIFY_SOURCE=2 
+DEBUG	= 
+AWK	= awk
+STRCASE = 
+EXPORT	= AUXLIBS='\
+		-lsasl2 \
+		-lldap -llber \
+		-lssl -lcrypto \
+		-lmysqlclient -lz -lm \
+		-lpq \
+		-lsqlite3 -lpthread \
+		-lcdb \
+	 -lpcre' CCARGS='\
+		-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I/usr/include/sasl \
+		-DHAS_LDAP \
+		-DUSE_TLS \
+		-DHAS_MYSQL -I/usr/include/mysql \
+		-DHAS_PGSQL -I/usr/include/postgresql \
+		-DHAS_SQLITE \
+		-DHAS_CDB \
+		-DDEF_MANPAGE_DIR=\"/usr/share/man\" \
+		-DDEF_DAEMON_DIR=\"/usr/lib/postfix\" \
+		-DDEF_SAMPLE_DIR=\"/etc/postfix/sample\" \
+		-DDEF_README_DIR=\"/usr/share/doc/postfix\" \
+	 -DHAS_PCRE ' OPT='-march=armv6 -mfloat-abi=hard -mfpu=vfp -O2 -pipe -fstack-protector --param=ssp-buffer-size=4 -D_FORTIFY_SOURCE=2 ' DEBUG=''
+WARN	= -Wall -Wno-comment -Wformat -Wimplicit -Wmissing-prototypes \
+	-Wparentheses -Wstrict-prototypes -Wswitch -Wuninitialized \
+	-Wunused -Wno-missing-braces

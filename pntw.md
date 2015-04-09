@@ -33,9 +33,7 @@ Sono sempre in test. Appena terminato evidenzierò i miei risultati e posterò a
 | McAfee GetSusp | 5 minuti | no |
 | McAfee RootkitRemover  | 3 minuti | no |
 | Registry Investigator | 30 secondi | no |
-| *OldTimer Listit*  _Candidato alla rimozione dalla routine_  | 30 minuti | no |
 | Farbar Service Scanner  | 30 secondi | no |
-| Microsoft Safety Scanner | 1 minuto | no | 
 | Hitman Pro* | 15 minuti | no | 
 | Cleanings IE | 1 minuto | no |
 | Cleanings Firefox | 1 minuto | no |

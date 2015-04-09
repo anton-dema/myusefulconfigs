@@ -57,6 +57,6 @@ Dopo la prima passata di fine di mondo, questi tools verranno eseguiti in manier
 
 ## La macchina è pulita, now what? 
 
-Possiamo rimuovere, con un tool (che però mi convince poco) di techWARU, chiamato *** , o con il remove program nativo di windows o con your uninstaller o simili, i programmi crapware eventuali che il cliente ha installato.  
+Possiamo rimuovere, con il remove program nativo di windows (deprecato da *Mike L'Indie*) o con your uninstaller o simili, i programmi crapware eventuali che il cliente ha installato.  
 
 Lanciare i windows update e alla fine dichiarare finalmente ripulito il computer. 

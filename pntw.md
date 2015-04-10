@@ -24,8 +24,9 @@ Sono sempre in test. Appena terminato evidenzierò i miei risultati e posterò a
 | ERUNT Backup REgistry  | 30 Secondi | no |
 | List installed Apps  | 30 Secondi | no |
 | Whatsinstartup  | 30 Secondi | no |
+| BlueScreenView  | 30 Secondi | no |
 | Fix Shell/Run  | 1 minuto | no |
-| Repair SSL/HTTPS/Cryptografy  | 3 minuti | no |
+| Repair SSL/HTTPS/Cryptography  | 3 minuti | no |
 | Flush DNS REsolver Cache  | 5 minuti | no |
 | ESET powelinks Cleaner  | 30 secondi | no |
 | Hijack This  | 30 secondi | no |
@@ -34,27 +35,21 @@ Sono sempre in test. Appena terminato evidenzierò i miei risultati e posterò a
 | McAfee RootkitRemover  | 3 minuti | no |
 | Registry Investigator | 30 secondi | no |
 | Farbar Service Scanner  | 30 secondi | no |
-| Hitman Pro* | 15 minuti | no | 
 | Cleanings IE | 1 minuto | no |
 | Cleanings Firefox | 1 minuto | no |
 | Cleanings Chrome | 1 minuto | no |
 | Cleanings Internet Explorer| 1 minuto | no |
 | Cleanings Opera | 5 secondi | no |
-
-\* **hitmanpro nella versione automatizzata viene lanciato con scan and quit. Fa la scansione, trova sicuramente qualche cosa ma poi esce. Questo per generare il report. Poi va eseguito a mano dopo il primo riavvio della macchina infetta.**                                         
+| Hitman Pro* | 15 minuti | YES | 
+| ADWCleaner| 5 minuti | YES |
+| RogueKiller | 20 minuti | YES |
+| MalwareBytes | 40 minuti | YES |
+| PCDecrapifier | dipende dai programmi da rimuovere | YES |
 
 Purtroppo, può succedere che qualche tool si blocchi per motivi di pesante infezione della macchina. Segnarsi il tool che non ha portato a termine il suo lavoro e lanciarlo manualmente in un secondo tempo. 
 
-- Una volta terminata la routine fine di mondo, lanciare a mano i seguenti Tools: 
-1. HitmanPro
-2. ADWCleaner
-3. MABAM Antimalware
-4. CCcleaner
-
-Dopo la prima passata di fine di mondo, questi tools verranno eseguiti in maniera veloce ed efficace, visto che i grossi ostacoli sono stati rimossi dai tools semi automatici in precedenza. 
+Alla routine ho aggiunto anche tutti i tool per la rimozione del malware. In presenza di Win7, aggiungere a mano in coda anche Combofix, che male non fa. 
 
 ## La macchina è pulita, now what? 
-
-Possiamo rimuovere, con il remove program nativo di windows (deprecato da *Mike L'Indie*) o con your uninstaller o simili, i programmi crapware eventuali che il cliente ha installato.  
 
 Lanciare i windows update e alla fine dichiarare finalmente ripulito il computer. 

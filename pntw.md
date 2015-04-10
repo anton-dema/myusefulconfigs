@@ -8,7 +8,7 @@ Uno di questi tool che ritiene techWARU un malware e ne termina l'esecuzione è 
 Nelle nostre routines programmate, ho quindi rimosso l'inclusione di questo tool.           
 
 Sto testando su una macchina sana una routine semplice ed efficace da applicare a tutti i computer che arrivano a laboratorio.              
-La sto chiamando  CPLINE FINE DI MONDO, in parafrasi al famoso film Dottor Stranamore, e sarà il tool da lanciare ad ogni computer che viene portato in assistenza.                 
+La sto chiamando  CPLINE FINE DI MONDO, in parafrasi al famoso film [Dottor Stranamore](http://it.wikipedia.org/wiki/Il_dottor_Stranamore_-_Ovvero:_come_ho_imparato_a_non_preoccuparmi_e_ad_amare_la_bomba) , e sarà il tool da lanciare ad ogni computer che viene portato in assistenza.                 
 Questa routine dovrà fornire una scheda completa della macchina a livello software e hardware e al tempo stesso provedere ad una rimozione di tutti i malware e spyware sicuramente presenti in tutte le macchine.          
 Sono sempre in test. Appena terminato evidenzierò i miei risultati e posterò anche i tempi medi per l'esecuzione dei tools, uno ad uno. 
 

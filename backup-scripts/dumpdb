@@ -1,0 +1,3 @@
+#/bin/bash 
+# very simple: we pipe mysqldump output to a given text file. Repeat this line each of every database.  
+mysqldump -u$user -p$password $dbname   > /home/anton/dump/$dbname.sql

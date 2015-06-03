@@ -1,0 +1,5 @@
+#/bin/bash
+# first we create a single archive with all dumped databases and we store in a given directory 
+tar cvzf /backup/databases/databases-$(date +%y%m%d-%H_%M).tar.gz -C /home/anton/dump/ .
+# then we purge archive files older than 5 days
+find /backup/databases/* -mtime +5 -exec rm {} \;

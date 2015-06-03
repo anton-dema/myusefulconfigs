@@ -1,0 +1,5 @@
+#/bin/bash
+# this script is very similar to bktardb, just copying websites files.
+tar cvzf /backup/sites/sites-$(date +%y%m%d-%H_%M).tar.gz -C /var/www .
+#purge every five days
+find /backup/sites/* -mtime +5 -exec rm {} \;

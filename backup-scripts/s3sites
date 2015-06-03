@@ -1,0 +1,3 @@
+#/bin/bash 
+# this sync the local /backup/sites directory to a dedicated S3 bucket. 
+s3cmd sync --delete-removed /backup/sites/ s3://$S3bucketname/sites/

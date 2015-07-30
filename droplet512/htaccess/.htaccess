@@ -1,0 +1,9 @@
+# appendere alla fine del file htaccess. 
+
+<FilesMatch "xmlrpc\.php$">
+order deny,allow
+deny from all
+allow from 192.0.78.27
+allow from 192.0.78.26
+</FilesMatch>
+

@@ -164,10 +164,16 @@ function copyBlock() {
   local DISKNAME=$2
   local BAKNAME="$BKPATH/$VMNAME-$DISKNAME-backup.img"
   logLine "Copying disk $DISKNAME for vm $VMNAME into file $BAKNAME..."
-  virsh blockcopy $VMNAME $DISKNAME $BAKNAME --wait --finish --verbose
+  virsh blockcopy $VMNAME $DISKNAME $BAKNAME 2> /dev/null
 if [ $? -gt 0 ]; then
     safeExit $VMNAME "Problem starting blockcopy"
   fi
+  local PROGRESS=0
+  until [ $PROGRESS -eq 100 ]; do
+    PROGRESS=$(virsh blockjob $VMNAME $DISKNAME 2>&1 | egrep -o "([0-9]{1,3})")
+ logLineLocal "Copying... $PROGRESS %"
+    sleep 5;
+  done
 
 }
 

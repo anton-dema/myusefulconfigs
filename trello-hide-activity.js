@@ -8,7 +8,9 @@
 // @version 1.0.1
 // @author Anton De Martini 
 // @grant  none
-// ==/UserScript==
+// @downloadURL https://raw.githubusercontent.com/anton-dema/myusefulconfigs/master/trello-hide-activity.js
+// @updateURL https://raw.githubusercontent.com/anton-dema/myusefulconfigs/master/trello-hide-activity.js
+// ==/UserScript==@updateURL
 
 var style = document.createElement('style');
 style.setAttribute('type', 'text/css');

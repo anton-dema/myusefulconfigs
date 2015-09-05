@@ -5,7 +5,7 @@
 // @include http://trello.com/*
 // @include https://trello.com/*
 // @run-at document-end
-// @version 1
+// @version 1.0.1
 // @author Anton De Martini 
 // @grant  none
 // ==/UserScript==

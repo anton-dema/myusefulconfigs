@@ -8,6 +8,7 @@
 // @version 1.0.2
 // @author Anton De Martini 
 // @grant  none
+// @updateURL https://raw.githubusercontent.com/anton-dema/myusefulconfigs/master/trello.user.js
 // ==/UserScript==
 
 var style = document.createElement('style');

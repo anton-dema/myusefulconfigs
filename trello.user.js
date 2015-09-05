@@ -8,8 +8,8 @@
 // @version 1.0.2
 // @author Anton De Martini 
 // @grant  none
-// @downloadURL https://gist.githubusercontent.com/anton-dema/5a94b12b0ee4dbb6d5ea/raw/trello.user.js
-// @updateURL https://gist.githubusercontent.com/anton-dema/5a94b12b0ee4dbb6d5ea/raw/trello.user.js
+// @downloadURL https://raw.githubusercontent.com/anton-dema/myusefulconfigs/master/trello.user.js
+// @updateURL https://raw.githubusercontent.com/anton-dema/myusefulconfigs/master/trello.user.js
 // ==/UserScript==
 
 var style = document.createElement('style');

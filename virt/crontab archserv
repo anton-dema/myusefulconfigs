@@ -1,0 +1,4 @@
+0 1 * * * /usr/bin/bkvm DC2 >/dev/null 
+0 3 * * * /usr/bin/bkvm server2012 >/dev/null 
+30 3 * * * /usr/bin/bkvm pbx >/dev/null 
+0 4 * * * /usr/bin/bkvm debian >/dev/null

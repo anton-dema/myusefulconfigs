@@ -1,0 +1,12 @@
+/*
+ Theme Name:   xxx-child
+ Theme URI:    http://dema.tv
+ Description:  xxx Child Theme
+ Author:       Anton De Martini
+ Author URI:   http://dema.tv
+ Template:     xxx
+ Version:      1.0.0
+ Text Domain:  xx-child
+*/
+
+@import url("../xxx/style.css");

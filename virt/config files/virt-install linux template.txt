@@ -1,0 +1,11 @@
+virt-install --connect qemu+ssh://root@KVM-hypervisorIPADDR/system \
+--name nameofyrawesomeVM \
+--ram 1024 \
+--disk path=/srv/VM/vulcan.img,format=qcow2,bus=virtio,cache=none \
+--vcpus 1 \
+--os-type linux \
+--os-variant generic \
+--console pty,target_type=serial \
+--cdrom /srv/isos/debian.iso \
+--vnc \
+--network network:VMnet,model=virtio

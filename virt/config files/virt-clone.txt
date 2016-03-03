@@ -1,0 +1,1 @@
+virt-clone --connect qemu+ssh://root@HYPERvisorIP/system --original baseVMname --name desiredVMname --file /srv/VM/newVMname.img

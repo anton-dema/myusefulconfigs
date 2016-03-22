@@ -51,7 +51,7 @@ function doExit() {
     else
       MESSAGE+="Backup ##FAILED##\n\n$LOGLINES\n"
     fi
-    echo -e $MESSAGE | sendmail -f$SENDER_EMAIL -F"$SENDER_NAME" $TARGET_EMAIL
+    echo -e $MESSAGE | /usr/sbin/sendmail -f$SENDER_EMAIL -F"$SENDER_NAME" $TARGET_EMAIL
   fi
   exit $1
 }
@@ -164,17 +164,17 @@ function copyBlock() {
   local DISKNAME=$2
   local BAKNAME="$BKPATH/$VMNAME-$DISKNAME-backup.img"
   logLine "Copying disk $DISKNAME for vm $VMNAME into file $BAKNAME..."
-#  virsh blockcopy $VMNAME $DISKNAME $BAKNAME 2> /dev/null
-  virsh blockcopy $VMNAME $DISKNAME $BAKNAME --wait --finish --verbose
+  virsh blockcopy $VMNAME $DISKNAME $BAKNAME 2> /dev/null
+#  virsh blockcopy $VMNAME $DISKNAME $BAKNAME --wait --finish --verbose
 if [ $? -gt 0 ]; then
     safeExit $VMNAME "Problem starting blockcopy"
   fi
-#  local PROGRESS=0
-#  until [ $PROGRESS -eq 100 ]; do
-#    PROGRESS=$(virsh blockjob $VMNAME $DISKNAME 2>&1 | egrep -o "([0-9]{1,3})")
-# logLineLocal "Copying... $PROGRESS %"
-#    sleep 5;
-#  done
+  local PROGRESS=0
+  until [ $PROGRESS -eq 100 ]; do
+    PROGRESS=$(virsh blockjob $VMNAME $DISKNAME 2>&1 | egrep -o "([0-9]{1,3})")
+ logLineLocal "Copying... $PROGRESS %"
+    sleep 5;
+  done
 
 }
 
@@ -251,7 +251,7 @@ function checkDiskSpace() {
     let VMREQSPACE+=$KILOBLKSPACE
   done 
   # get memory size (for calculating disk memory needed)
-  MEMSIZE=$(virsh dominfo $VMNAME | grep "Memoria max" | awk '{ print $3 }')
+  MEMSIZE=$(virsh dominfo $VMNAME | grep "Max memory" | awk '{ print $3 }')
   if [ "x$MEMSIZE" == "x" ]; then
     logLine "Cannot find VM required memory size"
     doExit 1

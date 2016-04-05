@@ -1,5 +1,5 @@
 #/bin/bash
-/usr/bin/myip > /tmp/ip;
+/usr/local/bin/myip > /tmp/ip;
 IP=$(cat /tmp/ip);
-cli53 rrcreate yourdomain.com yourthird A "$IP" --ttl 300 --replace;
+cli53 rrcreate --replace mydomain.com "thirdlevel 60 A "$IP"";
 rm /tmp/ip

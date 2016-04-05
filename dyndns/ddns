@@ -1,5 +1,5 @@
 #/bin/bash
 /usr/bin/myip > /tmp/ip;
 IP=$(cat /tmp/ip);
-cli53 rrcreate cpline.net casale A "$IP" --ttl 300 --replace;
+cli53 rrcreate yourdomain.com yourthird A "$IP" --ttl 300 --replace;
 rm /tmp/ip

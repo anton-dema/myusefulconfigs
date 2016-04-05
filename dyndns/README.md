@@ -5,7 +5,8 @@ $ sudo chmod +x /usr/local/bin/cli53
 $ mkdir -p ~/.aws		
 $ nano -w ~/.aws/credentials		
 
-   [default]
-   aws_access_key_id = myawskey
-   aws_secret_access_key = MY-SECRET-KEY
+
+	[default]
+	aws_access_key_id = myawskey
+	aws_secret_access_key = MY-SECRET-KEY
 

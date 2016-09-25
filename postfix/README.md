@@ -22,7 +22,7 @@ Con questo, il server invierà i suoi alert via mail all'amministratore maldestr
         compatibility_level = 2
 `/etc/sasl_passwd`          
 
-        [smtp.mandrillapp.com] yourmandrillusername:yourmandrillAPIKey 
+        [smtp.sendgrid.net] yoursebdgridusername:yoursendgridAPIKey 
 
 - Provare il setup con :        
 

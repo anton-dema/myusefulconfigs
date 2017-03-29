@@ -23,5 +23,4 @@ E non ho detto tutto
 
 ## Come si fa a dire?       
 
-Ora abbiamo la formattazoine in PHP e [markdown](http://dema.tv). 
-
+Ora abbiamo la formattazione in PHP e [markdown](http://dema.tv). 

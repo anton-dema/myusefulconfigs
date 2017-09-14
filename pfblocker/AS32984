@@ -1,0 +1,50 @@
+ASNumber:       32934
+ASName:         FACEBOOK
+ASHandle:       AS32934
+RegDate:        2004-08-24
+Updated:        2012-02-24
+Comment:        Please send abuse reports to abuse@facebook.com    
+Ref:            https://whois.arin.net/rest/asn/AS32934
+
+OrgName:        Facebook, Inc.
+OrgId:          THEFA-3
+Address:        1601 Willow Rd.
+City:           Menlo Park
+StateProv:      CA
+PostalCode:     94025
+Country:        US
+RegDate:        2004-08-11
+Updated:        2012-04-17
+Ref:            https://whois.arin.net/rest/org/THEFA-3
+
+OrgAbuseHandle: OPERA82-ARIN
+OrgAbuseName:   Operations
+OrgAbusePhone:  +1-650-543-4800 
+OrgAbuseEmail:  domain@facebook.com
+OrgAbuseRef:    https://whois.arin.net/rest/poc/OPERA82-ARIN
+
+OrgTechHandle: OPERA82-ARIN
+OrgTechName:   Operations
+OrgTechPhone:  +1-650-543-4800 
+OrgTechEmail:  domain@facebook.com
+OrgTechRef:    https://whois.arin.net/rest/poc/OPERA82-ARIN
+
+RAbuseHandle: OPERA82-ARIN
+RAbuseName:   Operations
+RAbusePhone:  +1-650-543-4800 
+RAbuseEmail:  domain@facebook.com
+RAbuseRef:    https://whois.arin.net/rest/poc/OPERA82-ARIN
+
+RNOCHandle: OPERA82-ARIN
+RNOCName:   Operations
+RNOCPhone:  +1-650-543-4800 
+RNOCEmail:  domain@facebook.com
+RNOCRef:    https://whois.arin.net/rest/poc/OPERA82-ARIN
+
+RTechHandle: OPERA82-ARIN
+RTechName:   Operations
+RTechPhone:  +1-650-543-4800 
+RTechEmail:  domain@facebook.com
+RTechRef:    https://whois.arin.net/rest/poc/OPERA82-ARIN
+
+Updated 13 Sep 2017 16:59 PST © 2017 Hurricane Electric

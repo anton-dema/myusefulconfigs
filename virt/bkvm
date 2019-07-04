@@ -72,7 +72,7 @@ function checkDomain() {
 function getVMBlockDevs() {
   local VMNAME=$1
   # ottieni i dischi della vm
-  BLOCKDEVS=$(virsh domblklist $VMNAME 2> /dev/null | grep "/pathOFvmQCOW2disks" | cut -d' ' -f1)
+  BLOCKDEVS=$(virsh domblklist $VMNAME 2> /dev/null | grep "/pathOFvmQCOW2disks" | cut -d' ' -f2)
   if [ "x$BLOCKDEVS" == "x" ]; then
     logLine "Cannot get block device list for domain. Exit."
     doExit 1

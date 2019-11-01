@@ -1,0 +1,8 @@
+Powershell VPN commands
+
+Import-Module powershellget
+Import-Module vpnclient
+
+Add-VpnConnection -Name "name" -ServerAddress 10.10.10.10 -TunnelType l2tp -EncryptionLevel Required -AuthenticationMethod MSChapv2 -SplitTunneling -RememberCredential -L2tpPsk presharedkey
+
+Add-VpnConnectionRoute -ConnectionName "name" -DestinationPrefix "remotelocalnet/24"

@@ -1,0 +1,87 @@
+#!/bin/bash
+
+# =========================================================================
+# NUT NOTIFICATION SCRIPT
+# Location: /etc/nut/upsnotify.sh
+# =========================================================================
+
+# --- CONFIGURATION ---
+EMAIL_RECIPIENT="somerecipient@email.net"
+EMAIL_SENDER="sender@email.com"
+HOST_NAME=$(hostname)
+
+# The 'mail' command is typically provided by the 'mailutils' or 'bsd-mailx' package.
+MAIL_COMMAND="/usr/bin/mail"
+
+# Check if the mail command exists
+if ! command -v "$MAIL_COMMAND" &> /dev/null
+then
+    echo "ERROR: Mail command '$MAIL_COMMAND' not found. Cannot send email." | logger -t "upsnotify.sh"
+    exit 1
+fi
+# ---------------------
+
+# Variables passed by upsmon through the environment:
+# NOTIFYTYPE: The event that occurred (e.g., ONBATT, ONLINE, LOWBATT)
+# UPSNAME: The UPS identifier (e.g., myups@localhost)
+#
+# Arguments passed by upsmon (the NOTIFYMSG text):
+# $1: The full descriptive message from NOTIFYMSG
+
+UPSEVENT="${NOTIFYTYPE:-UNKNOWN}"
+UPSID="${UPSNAME:-UNKNOWN}"
+MESSAGE_TEXT="${1:-No detailed message available}"
+DATETIME=$(date +"%Y-%m-%d %H:%M:%S")
+
+# --- CONSTRUCT EMAIL ---
+SUBJECT="[UPS ALERT] ${UPSEVENT} on ${UPSID} (${HOST_NAME})"
+
+EMAIL_BODY="
+==================================================
+Network UPS Tools (NUT) Notification
+==================================================
+
+Host: ${HOST_NAME}
+Time: ${DATETIME}
+UPS ID: ${UPSID}
+Event Type: ${UPSEVENT}
+Message: ${MESSAGE_TEXT}
+
+Action taken:
+"
+
+case "$UPSEVENT" in
+    ONLINE)
+        EMAIL_BODY="${EMAIL_BODY}Mains power restored. System operating normally."
+        ;;
+    ONBATT)
+        EMAIL_BODY="${EMAIL_BODY}Mains power lost. System running on battery."
+        ;;
+    LOWBATT)
+        EMAIL_BODY="${EMAIL_BODY}UPS battery is critically low! Immediate shutdown is imminent."
+        ;;
+    FSD)
+        EMAIL_BODY="${EMAIL_BODY}Forced Shutdown (FSD) flag received. System is preparing to shut down."
+        ;;
+    COMMBAD)
+        EMAIL_BODY="${EMAIL_BODY}Communication with the UPS has been lost. Cannot monitor status."
+        ;;
+    COMMOK)
+        EMAIL_BODY="${EMAIL_BODY}Communication with the UPS has been re-established."
+        ;;
+    SHUTDOWN)
+        EMAIL_BODY="${EMAIL_BODY}The system is performing a complete shutdown."
+        ;;
+    *)
+        EMAIL_BODY="${EMAIL_BODY}Received an unhandled event type. Check logs."
+        ;;
+esac
+
+# --- SEND EMAIL ---
+echo -e "$EMAIL_BODY" | $MAIL_COMMAND -s "$SUBJECT" -r "$EMAIL_SENDER" "$EMAIL_RECIPIENT"
+
+# Log the action (helpful for debugging)
+logger -t "upsnotify.sh" "Sent notification for event $UPSEVENT to $EMAIL_RECIPIENT"
+
+# CRUCIAL: Exit with 0 (success) so NUT does NOT fall back to default email
+exit 0

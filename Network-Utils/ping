@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [ $# -ne 3 ]; then
+    echo "Usage: $0 <network> <start_host> <end_host>"
+    echo "Example: $0 192.168.1 1 254"
+    exit 1
+fi
+
+NETWORK=$1
+START=$2
+END=$3
+OUTPUT="live_hosts.txt"
+
+> $OUTPUT
+
+echo "Scanning $NETWORK.$START-$END..."
+
+for i in $(seq $START $END); do
+    (ping -c 1 -W 1 $NETWORK.$i > /dev/null 2>&1 && echo $NETWORK.$i >> $OUTPUT) &
+done
+
+wait
+
+sort -t . -k 4 -n $OUTPUT -o $OUTPUT
+
+echo "Scan complete. Results in $OUTPUT"
+cat $OUTPUT

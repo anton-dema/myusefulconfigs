@@ -9,7 +9,7 @@ fi
 NETWORK=$1
 START=$2
 END=$3
-OUTPUT="live_hosts.txt"
+OUTPUT="/tmp/live_hosts.txt"
 
 > $OUTPUT
 

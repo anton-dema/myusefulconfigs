@@ -8,3 +8,8 @@ actions = FSD
 # Allow all instant commands
 instcmds = ALL
 upsmon primary
+
+[admin]
+       password = xxxxxxxx
+       allowfrom = x.x.x.x/24
+       upsmon slave

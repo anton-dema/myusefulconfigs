@@ -1,5 +1,5 @@
-# Risorse per SAMBA 4 AD DC 
+# RisorseAD DC 
 
-In questa sezione risorse per samba 4 in qualità di AD DC. 
+In questa sezione risorse per Microsoft AD DC e anche SMB4 
 
 
